@@ -37,5 +37,4 @@ Or, eight cents.
 If you ever do download this, thanks. I'm working pretty hard on this, and I'm investigating things I do not know about. I want the Minecraft community to be happy. Downloading this, or even just reading this brings me joy. Bye! ❤️
 
 ### Also, here's a demo.
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OAMGxX8sMMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[oh watch here i guess](https://www.youtube.com/watch?v=OAMGxX8sMMk)
