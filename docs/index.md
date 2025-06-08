@@ -1,14 +1,8 @@
 # TOSCR-project - The Old School Computer Revival Project
 ## Optimize Minecraft performance, especially on older Intel iMacs!
 
-<div data-aos="fade-up">
-
 ## Introduction
 TOSCR-project is a Minecraft modpack primarily aimed at optimizing Minecraft performance, reducing lag, and minimizing stutter. It's designed especially for iMacs with Intel chipsets and Intel Integrated Graphics, but it can generally work on virtually any computer.
-
-</div>
-
-<div data-aos="fade-up">
 
 ## ⚠️ Important Warnings & Disclaimers
 *   "This is a highly experimental modpack. FYI, I am **NOT** a professional."
@@ -22,16 +16,8 @@ TOSCR-project is a Minecraft modpack primarily aimed at optimizing Minecraft per
     *   Working on modern machines like the Bee-Link SER8 can give performance boosts of up to 300+ FPS with infinite FPS and VSync off.
 *   **Note on M1-4 chips:** "For safety purposes I'm going to say the M1-4 line of chips *probably* don't work with this."
 
-</div>
-
-<div data-aos="fade-up">
-
 ## Why TOSCR-project?
 "I used a crusty old iMac. I know some people that still use it to this day. _(cough Christopher cough)_ Minecraft runs horribly on these kinda iMacs, with major stuttering and a deadly amount of lag (a lot worse than this modpack could be). That's why I made TOSCR-project. It can solve some lag and almost eliminate stutter. Testing, however, has come to a halt, as I no longer have an unfunctioning machine to work on."
-
-</div>
-
-<div data-aos="fade-up">
 
 ## Minecraft Modpack Details
 
@@ -50,62 +36,37 @@ TOSCR-project is a Minecraft modpack primarily aimed at optimizing Minecraft per
 *   "Some basic mods might not work with this modpack. Before using this, make sure that the mods you can add are ready-to-use with this modpack."
 *   "There are no known issues yet."
 
-</div>
-
-<div data-aos="fade-up">
-
 ## Reporting Issues
 *   Issues can be reported on the [GitHub Issues page](../../issues).
 *   "Can also be reported via [X](https://x.com/TOSCR_project) if you still didn't read this."
 
-</div>
-
-<div data-aos="fade-up">
-
 ## Demo
 [Watch the demo on YouTube](https://www.youtube.com/watch?v=OAMGxX8sMMk)
 
-</div>
-
 ## <a id="downloads"></a>Downloads
 
-<div class="downloads-section animated-gradient-background" data-aos="fade-up">
-It's easy to get started with TOSCR-project!
+It's easy to get started with TOSCR-project! (Latest Release: v1.1.1)
 
 ### Recommended: Modrinth
 The easiest way to install and stay updated is through Modrinth:
 *   Simply search for **TOSCR-project** on the Modrinth website or in launchers that support Modrinth modpack installation.
-*   You can directly visit our [Modrinth Project Page](https://modrinth.com/modpack/toscr-project) (Note: This URL is a placeholder, please verify and use the correct one if available, otherwise, keep as a general instruction).
+*   You can directly visit our [Modrinth Project Page](https://modrinth.com/modpack/thesomewhatyou-minecraft-revival).
 
 ### Manual Installation (e.g., for MultiMC)
-1.  Download the latest modpack file (usually a .zip) from the Modrinth page or GitHub Releases (if available).
+1.  Download the latest modpack file (usually a .zip from our Modrinth page - version v1.1.1 recommended) or from GitHub Releases (if available).
 2.  In MultiMC (or a compatible launcher like Prism Launcher):
     *   Click "Add Instance"
     *   Select "Import from zip"
     *   Browse to and select the downloaded modpack .zip file.
 3.  The instance will be created automatically with all the mods and configurations!
 
-</div>
-
-<div data-aos="fade-up">
-
 ## Restrictions & Licensing
 This modpack is protected under the [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). View their restrictions.
-
-</div>
-
-<div data-aos="fade-up">
 
 ## Project Statement
 "This project will be **entirely free, forever.** You heard me right! No donations shall be taken. My only revenue will be Modrinth giving me the bag. Ko-Fi might be coming."
 "Or, maybe Modrinth giving me that sweet, sweet bag."
 
-</div>
-
-<div data-aos="fade-up">
-
 ## A Final Word
 "Anyways..."
 "If you ever do download this, thanks. I'm working pretty hard on this, and I'm investigating things I do not know about. I want the Minecraft community to be happy. Downloading this, or even just reading this brings me joy. Bye! ❤️"
-
-</div>
