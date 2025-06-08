@@ -1,0 +1,71 @@
+// Custom SCSS for TOSCR-project
+
+// Animated Gradient Background
+// This can be applied to elements that need a black and purple animated gradient.
+.animated-gradient-background {
+  background: linear-gradient(45deg, #4b0082, #000000, #300030, #000000, #4b0082); // Indigo, Black, Darker Purple, Black, Indigo
+  background-size: 600% 600%; // Increased size for smoother/slower transition over a wider range
+  animation: gradientBG 20s ease infinite; // Slower animation
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Specific styling for the body to apply the dark theme and ensure text is visible.
+// Just the Docs handles the base dark theme, but we can add overrides here if needed.
+// For now, we'll rely on the theme's dark mode for body styling.
+// If the animated gradient were to be the main page background, it would go here,
+// but that might be too overwhelming. It's better applied to specific sections.
+
+// Example of how to override Just the Docs variables (if needed later for specific purple)
+// This would typically go into a _sass/color_schemes/custom_dark.scss,
+// but simple overrides can also be here if they don't conflict.
+// For example, to make links the purple from the gradient:
+// $link-color: #4b0082; // Indigo
+
+// Apply Ubuntu font to the main body text
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+// Optionally, ensure headings also use Ubuntu if the theme separates them.
+// Just the Docs might already inherit this from the body, but this is a safeguard.
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+// Styling for the Downloads section
+.downloads-section {
+  padding: 2em; // Add some padding inside the gradient box
+  border-radius: 8px; // Optional: rounded corners for the box
+  margin-top: 2em; // Space above the downloads section
+  margin-bottom: 2em; // Space below the downloads section
+  color: #ffffff; // Set default text color to white for readability on dark gradient
+}
+
+.downloads-section h3 {
+  color: #ffffff; // Ensure h3 headings are white
+  margin-top: 1em;
+}
+
+.downloads-section a {
+  color: #bb86fc; // A light purple for links, good contrast on dark purple/black
+}
+
+.downloads-section a:hover {
+  color: #ffffff; // White on hover
+}
+
+// Ensure list items inside the downloads section are also white
+.downloads-section ul li, .downloads-section ol li {
+  color: #ffffff;
+}
