@@ -1,3 +1,12 @@
+
+title: TOSCR-project
+description: thesomewhatyou's Old School Computer Revival Project - Optimize Minecraft on older Intel iMacs!
+theme: just-the-docs
+plugins:
+  - jekyll-remote-theme
+color_scheme: dark
+
 theme: jekyll-theme-minimal
 title: TOSCR-project
 description: thesomewhatyou's Old School Computer Revival Project - Optimize Minecraft on older Intel iMacs!
+

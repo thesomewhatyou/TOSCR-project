@@ -43,6 +43,25 @@ TOSCR-project is a Minecraft modpack primarily aimed at optimizing Minecraft per
 ## Demo
 [Watch the demo on YouTube](https://www.youtube.com/watch?v=OAMGxX8sMMk)
 
+
+## <a id="downloads"></a>Downloads
+
+It's easy to get started with TOSCR-project! (Latest Release: v1.1.1)
+
+### Recommended: Modrinth
+The easiest way to install and stay updated is through Modrinth:
+*   Simply search for **TOSCR-project** on the Modrinth website or in launchers that support Modrinth modpack installation.
+*   You can directly visit our [Modrinth Project Page](https://modrinth.com/modpack/thesomewhatyou-minecraft-revival).
+
+### Manual Installation (e.g., for MultiMC)
+1.  Download the latest modpack file (usually a .zip from our Modrinth page - version v1.1.1 recommended) or from GitHub Releases (if available).
+2.  In MultiMC (or a compatible launcher like Prism Launcher):
+    *   Click "Add Instance"
+    *   Select "Import from zip"
+    *   Browse to and select the downloaded modpack .zip file.
+3.  The instance will be created automatically with all the mods and configurations!
+
+
 ## Restrictions & Licensing
 This modpack is protected under the [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). View their restrictions.
 
