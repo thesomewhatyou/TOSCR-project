@@ -43,6 +43,7 @@ TOSCR-project is a Minecraft modpack primarily aimed at optimizing Minecraft per
 ## Demo
 [Watch the demo on YouTube](https://www.youtube.com/watch?v=OAMGxX8sMMk)
 
+
 ## <a id="downloads"></a>Downloads
 
 It's easy to get started with TOSCR-project! (Latest Release: v1.1.1)
@@ -59,6 +60,7 @@ The easiest way to install and stay updated is through Modrinth:
     *   Select "Import from zip"
     *   Browse to and select the downloaded modpack .zip file.
 3.  The instance will be created automatically with all the mods and configurations!
+
 
 ## Restrictions & Licensing
 This modpack is protected under the [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). View their restrictions.
