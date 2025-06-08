@@ -7,7 +7,7 @@ This is a modpack for iMacs with the Intel chipset and Intel Integrated Graphics
 
 ## ⚠️ Warning! ⚠️
 
-This is a highly experimental modpack. FYI, I am **NOT** a professional. Issues can be reported on this GitHub/Discord. You can also tag our (X)[https://x.com/TOSCR_project] bot and it'll automatically create an issue with your bodied text. Make sure to describe your issue carefully, as the whole body text AND the post will be revised by thesomewhatyou. One man band.
+This is a highly experimental modpack. FYI, I am **NOT** a professional. Issues can be reported on this GitHub/Discord. You can also tag our [X](x.com/TOSCR_project) bot and it'll automatically create an issue with your bodied text. Make sure to describe your issue carefully, as the whole body text AND the post will be revised by thesomewhatyou. One man band.
 
 TOSCR-project is a very iffy modpack, as monthly updates maybe will be provided, but they may not be optimal. EOL will be announced once things change, as it is now very predictable whether or not this modpack will be discontinued. What I can guarantee is:
 * No bugs that affect gameplay
@@ -38,7 +38,7 @@ Looking on Modrinth, you can see it directly from the downloads page.
 Configuring is super easy! Mod List is included with the modpack, allowing for easy customization, and not having to modify .jsons like a person who says "btw i use arch" on a daily basis.
 
 ### Compatibility
-Some basic mods might not work with this modpack. Before using this, make sure that the mods you can add are ready-to-use with this modpack. There are no known issues yet. Issues can be reported on THIS GitHub branch and can also be reported via (X)[https://x.com/TOSCR_project] if you still didn't read this.
+Some basic mods might not work with this modpack. Before using this, make sure that the mods you can add are ready-to-use with this modpack. There are no known issues yet. Issues can be reported on THIS GitHub branch and can also be reported via [X](x.com/TOSCR_project) if you still didn't read this.
 
 ## Restrictions:
 
