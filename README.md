@@ -1,13 +1,14 @@
 # ⚠️⚠️WARNING!!!⚠️⚠️
 I highly suggest you read this WHOLE readme. Making mistakes and not following this guide could screw up the modpack. If you're copying the modpack and NOT giving full attribution to the respective mod owners and thesomewhatyou, a takedown will be requested. Not like anyone would copy this, but, eh, worth a shot.
 
-Hi, welcome to thesomewhatyou's Old School Computer Revival Project. (TOSCR-project)
+Hi, welcome to thesomewhatyou's Old School Computer Revival Project (TOSCR-project), or as I like to call it, the "Why is this old Mac so slow?" fixer-upper.
+This modpack is so old-school, it remembers when Apple still used colors on their logos. We're talking ancient, folks.
 
-This is a modpack for iMacs with the Intel chipset and Intel Integrated Graphics. This optimizes Minecraft without adding unnecessary items. 
+This is a modpack primarily for those brave souls still rocking iMacs with the Intel chipset and Intel Integrated Graphics (may its soul rest in peace). This optimizes Minecraft without adding unnecessary items, because let's be honest, your machine is already juggling enough.
 
-## ⚠️ Warning! ⚠️
+## ⚠️ Warning! ⚠️ (Yes, another one. We like to be thorough.)
 
-This is a highly experimental modpack. FYI, I am **NOT** a professional. Issues can be reported on this GitHub/Discord. You can also tag our [X](x.com/TOSCR_project) bot and it'll automatically create an issue with your bodied text. Make sure to describe your issue carefully, as the whole body text AND the post will be revised by thesomewhatyou. One man band.
+This is a highly experimental modpack. FYI, I am **NOT** a professional. Just a person who got tired of the spinning beach ball of death and decided to fight back. Issues can be reported on this GitHub/Discord. You can also tag our [X](x.com/TOSCR_project) bot and it'll automatically create an issue with your bodied text. Make sure to describe your issue carefully, as the whole body text AND the post will be revised by thesomewhatyou. One man band, baby!
 
 TOSCR-project is a very iffy modpack, as monthly updates maybe will be provided, but they may not be optimal. EOL will be announced once things change, as it is now very predictable whether or not this modpack will be discontinued. What I can guarantee is:
 * No bugs that affect gameplay
@@ -23,12 +24,15 @@ For safety purposes I'm going to say the M1-4 line of chips *probably* don't wor
 
 ## thesomewhatyou, why'd ya do this?
 
-I used a crusty old iMac. I know some people that still use it to this day. _(cough Christopher cough)_ Minecraft runs horribly on these kinda iMacs, with major stuttering and a deadly amount of lag (a lot worse than this modpack could be). That's why I made TOSCR-project. It can solve some lag and almost eliminate stutter. Testing, however, has come to a halt, as I no longer have an unfunctioning machine to work on.
+I used a crusty old iMac – a machine that probably belongs in a museum, let's be honest. You're welcome. I know some people that still use these relics to this day. _(cough Christopher cough)_ Minecraft runs horribly on these kinda iMacs, with major stuttering and a deadly amount of lag (a lot worse than this modpack could be, though that's a low bar). We're talking about the kind of lag that makes you question your life choices. That's why I made TOSCR-project. It *might* solve some lag and *could* almost eliminate stutter. Warning: May cause your iMac to feel young again. Side effects include a sudden urge to play Oregon Trail.
+
+Testing, however, has come to a halt, as I no longer have an unfunctioning machine to work on. My condolences to the Mac.
 
 ## Minecraft Modpack Details
 
 ### Installation
-Just plop the file in MultiMC (or a fork of it!) and an instance will be instantly made. Using Modrinth? Just look up the modpack itself on Modrinth, as the modpack has been approved on the platform.
+Just plop the file in MultiMC (or a fork of it!) – gently, it's old – and an instance will be instantly made.
+Using Modrinth? Just look up the modpack itself on Modrinth, as the modpack has been approved on the platform. We can't promise miracles, but we *can* promise slightly less lag. Probably.
 
 ### Mod List
 The mod list is very complicated. If you are using either launcher, you can easily view the mods and disable them at will!
