@@ -1,0 +1,51 @@
+// Import the dark theme as a base
+@import "./dark";
+
+// Retro Computing / Matrix-inspired color scheme
+
+// Core colors
+$body-background-color: #0D0D0D; // Very dark grey, almost black
+$text-color: #00FF00;            // Bright green
+$link-color: #00C000;            // Slightly darker green for links
+$link-hover-color: #33FF33;      // Lighter green for link hover
+$heading-color: #00FF00;         // Bright green for headings
+
+// Sidebar
+$sidebar-background-color: #0A0A0A;
+$nav-child-link-color: #00D000;
+$nav-child-link-hover-color: #33FF33;
+$nav-active-color: #55FF55;
+
+// Code blocks
+$code-background-color: #1A1A1A; // Slightly lighter than body bg
+$code-text-color: #00E000;
+
+// Borders
+$border-color: #005000; // Dark green for borders
+
+// Callouts / Warnings
+// The theme uses specific variables for different callout types (e.g., $feedback-color for warnings)
+// We might need to target these specifically if this doesn't catch them.
+// For now, let's try a general approach and refine.
+$feedback-color: #FFFF00; // Bright yellow for warning text/icons
+$feedback-background-color: #333300; // Dark yellow background for warnings
+
+// Buttons
+$btn-primary-color: #00FF00;
+$btn-primary-background-color: #005000;
+$btn-primary-hover-background-color: #007000;
+
+// Responsive tables
+$table-background-color: #101010;
+$table-border-color: $border-color;
+$table-header-color: #00FF00;
+$table-row-stripe-color: #151515;
+
+// Search
+$search-background-color: #1A1A1A;
+$search-result-background-color: #202020;
+$search-result-border-color: $border-color;
+$search-result-text-color: $text-color;
+$search-input-background-color: #101010;
+$search-input-text-color: $text-color;
+$search-focussed-input-background-color: #000000;
