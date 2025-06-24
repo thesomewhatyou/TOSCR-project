@@ -1,0 +1,178 @@
+// Custom SCSS rules for a retro computing / Matrix vibe
+
+// --- Fonts ---
+body, p, li, td, th, input, textarea, button, .btn {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  font-size: 0.95rem; // Slightly adjust for monospace readability
+}
+
+h1, h2, h3, h4, h5, h6, .site-title {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  text-shadow: 1px 1px 0px #003300, // Darker green shadow
+               2px 2px 0px #002200; // Even darker outline
+}
+
+.site-title {
+  font-size: 2.5rem; // Make title bigger
+  letter-spacing: 0.1em;
+}
+
+// --- General Enhancements ---
+html {
+  // Subtle scanlines effect for the background
+  // background-image: linear-gradient(rgba(0, 255, 0, 0.03) 50%, transparent 50%);
+  // background-size: 100% 3px;
+  // For a more prominent effect, adjust opacity and size.
+  // This can be performance intensive or too distracting, so keeping it commented for now.
+}
+
+// --- Warning/Callout Styling ---
+// `just-the-docs` uses callouts. Common classes are .callout .callout--warning
+// The ⚠️ emoji itself is just text, so it should pick up the $feedback-color from the scheme.
+
+.callout {
+  border-left-width: 5px; // Make border more prominent
+  border-radius: 0px; // Sharp corners
+  padding: 1em 1.5em;
+  box-shadow: 3px 3px 5px rgba(0, 50, 0, 0.3); // Subtle green shadow
+}
+
+.callout--warning {
+  // Use variables defined in `custom_theme.scss` if they are correctly picked up.
+  // If not, we can override directly here.
+  // background-color: $feedback-background-color; // Should be inherited
+  // border-left-color: $feedback-color;          // Should be inherited
+
+  // Ensure the text inside the warning callout also uses the feedback color for emphasis
+  p, strong {
+    color: $feedback-color !important; // Bright yellow text
+  }
+
+  // Make the emoji icon itself more distinct if needed
+  &::before { // Some themes use ::before for icons in callouts
+    // color: $feedback-color; // Example if the icon color needs explicit setting
+  }
+}
+
+// Enhance blockquotes to match the theme
+blockquote {
+  border-left: 4px solid $link-color; // Green border
+  padding-left: 1rem;
+  margin-left: 0;
+  color: #00CC00; // Slightly dimmer green for quote text
+  font-style: italic;
+  background-color: #051005; // Very dark green, subtle background
+  border-radius: 0;
+  box-shadow: 2px 2px 3px rgba(0, 30, 0, 0.2);
+}
+
+// --- Links ---
+a {
+  text-decoration: none; // Remove underline, rely on color
+  transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+  text-shadow: 0 0 5px $link-hover-color, 0 0 10px $link-hover-color; // Glowing effect
+}
+
+// --- Code Blocks ---
+// The color scheme variables should handle most of this.
+// Additional tweaks if needed:
+pre, code {
+  border-radius: 0px; // Sharp corners for code blocks
+  border: 1px solid $border-color;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace !important; // Ensure monospace
+}
+
+pre {
+  padding: 0.8em;
+  box-shadow: 2px 2px 5px rgba(0, 30, 0, 0.3);
+}
+
+// --- Header/Navigation ---
+.site-header {
+  border-bottom: 2px solid $border-color !important; // Thicker, green border
+  box-shadow: 0 2px 5px rgba(0, 50, 0, 0.3);
+}
+
+// --- Buttons ---
+.btn {
+  border-radius: 0;
+  border: 1px solid $btn-primary-color;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 0 0 8px $btn-primary-color;
+}
+
+// --- Make selection match the theme ---
+::selection {
+  background: $text-color; /* Green background */
+  color: $body-background-color; /* Dark text */
+}
+::-moz-selection { /* Firefox */
+  background: $text-color;
+  color: $body-background-color;
+}
+
+// --- Scrollbar (for Webkit browsers) ---
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: $sidebar-background-color;
+  border-left: 1px solid $border-color;
+}
+::-webkit-scrollbar-thumb {
+  background: $link-color;
+  border: 1px solid $text-color;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $link-hover-color;
+}
+::-webkit-scrollbar-corner {
+  background: $sidebar-background-color;
+}
+
+// --- Add a subtle animation to the title ---
+.site-title a { // Target the link within the site-title for the animation
+  display: inline-block; // Necessary for transform
+  animation: flickerTitle 3s infinite alternate ease-in-out;
+}
+
+@keyframes flickerTitle {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px #00ff00,
+      0 0 11px #00ff00,
+      0 0 19px #00ff00,
+      0 0 40px #00aa00,
+      0 0 80px #00aa00,
+      0 0 90px #00aa00,
+      0 0 100px #00aa00,
+      0 0 150px #00aa00;
+    color: #ccffcc; // Slightly lighter text during glow
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+    color: $text-color;
+  }
+}
+
+// Add a blinking cursor effect after the main title
+.site-title a::after {
+  content: '_';
+  animation: blink-caret 1s step-end infinite;
+  margin-left: 0.2em;
+  font-weight: bold; // Make cursor more prominent
+}
+
+@keyframes blink-caret {
+  from, to { opacity: 0 }
+  50% { opacity: 1 }
+}
