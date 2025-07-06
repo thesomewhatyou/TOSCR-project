@@ -57,5 +57,3 @@ Or, maybe Modrinth giving me that sweet, sweet bag.
 
 If you ever do download this, thanks. I'm working pretty hard on this, and I'm investigating things I do not know about. I want the Minecraft community to be happy. Downloading this, or even just reading this brings me joy. Bye! ❤️
 
-### Also, here's a demo.
-[oh watch here i guess because EMBEDS DON'T WORK HERE FOR SOME REASON.](https://www.youtube.com/watch?v=OAMGxX8sMMk)
