@@ -1,60 +1,58 @@
-# TOSCR-project - The Old School Computer Revival Project
-## Optimize Minecraft performance, especially on older Intel iMacs!
+# TOSCR-project - thesomewhatyou's Old School Computer Revival Project
+## Optimize Minecraft performance, even on your old PC!
 
 ## Introduction
-TOSCR-project is a Minecraft modpack primarily aimed at optimizing Minecraft performance, reducing lag, and minimizing stutter. It's designed especially for iMacs with Intel chipsets and Intel Integrated Graphics, but it can generally work on virtually any computer.
+TOSCR-project is a Minecraft modpack primarily aimed at optimizing Minecraft performance, reducing lag, and minimizing stutter. It's designed especially older PCs, but if you want to crank it up a notch, use it however you like.
 
 ## ⚠️ Important Warnings & Disclaimers
 *   This is a highly experimental modpack. FYI, I am **NOT** a professional.
-*   Issues can be reported on GitHub/Discord. You can also tag our (X)[https://x.com/TOSCR_project] bot and it'll automatically create an issue with your bodied text.
+*   Issues can be reported on GitHub/Discord. You can also tag our (X)[https://x.com/TOSCR_project] bot and it'll automatically create an issue with your bodied text. It'll try probably.
 *   TOSCR-project is a very iffy modpack, as monthly updates maybe will be provided, but they may not be optimal.
 *   EOL (End Of Life) status is unpredictable: EOL will be announced once things change, as it is now very predictable whether or not this modpack will be discontinued.
 *   **Guarantees:**
     *   No bugs that affect gameplay
     *   A slow, yet steady release
-    *   Around 100+ FPS for iMacs using this (Tested on a 2017 iMac. Not tested on any other machine.)
-    *   Working on modern machines like the Bee-Link SER8 can give performance boosts of up to 300+ FPS with infinite FPS and VSync off.
-*   **Note on M1-4 chips:** For safety purposes I'm going to say the M1-4 line of chips *probably* don't work with this.
+    *   Around 100+ FPS for PCs using this (Tested on a 2017 iMac. Not tested on any other machine. Not gonna bother doing it anyway.)
+*   **Note on More Advanced Chipsets:** lmao you don't need this go away unless you want 1000+ FPS.
 
-## Why TOSCR-project?
+## Why make TOSCR-project?
 I used a crusty old iMac. I know some people that still use it to this day. _(cough Christopher cough)_ Minecraft runs horribly on these kinda iMacs, with major stuttering and a deadly amount of lag (a lot worse than this modpack could be). That's why I made TOSCR-project. It can solve some lag and almost eliminate stutter. Testing, however, has come to a halt, as I no longer have an unfunctioning machine to work on.
 
 ## Minecraft Modpack Details
 
 ### Installation
 *   Just plop the file in MultiMC (or a fork of it!) and an instance will be instantly made.
-*   Using Modrinth? Just look up the modpack itself on Modrinth, as the modpack has been approved on the platform.
+*   Using Modrinth? Just look up the modpack itself on Modrinth, as the modpack has been approved on the platform. Or CurseForge. 
 
 ### Mod List
 *   The mod list is very complicated. If you are using either launcher, you can easily view the mods and disable them at will!
 *   Looking on Modrinth, you can see it directly from the downloads page.
+*   Forget about libraries. Literally so much. You don't need to know.
 
 ### Configuration
 *   Configuring is super easy! Mod List is included with the modpack, allowing for easy customization, and not having to modify .jsons like a person who says btw i use arch on a daily basis.
 
 ### Compatibility
 *   Some basic mods might not work with this modpack. Before using this, make sure that the mods you can add are ready-to-use with this modpack.
-*   There are no known issues yet.
+*   There are no known issues yet. Y E T.
 
 ## Reporting Issues
-*   Issues can be reported on the [GitHub Issues page](../../issues).
+*   Issues can be reported on the issues pages on GitHub.
 *   Can also be reported via [X](https://x.com/TOSCR_project) if you still didn't read this.
-
-## Demo
-[Watch the demo on YouTube](https://www.youtube.com/watch?v=OAMGxX8sMMk)
 
 
 ## <a id=downloads></a>Downloads
 
-It's easy to get started with TOSCR-project! (Latest Release: v1.1.1)
+It's easy to get started with TOSCR-project.
 
-### Recommended: Modrinth
+### Recommended: Modrinth and probably CurseForge
 The easiest way to install and stay updated is through Modrinth:
 *   Simply search for **TOSCR-project** on the Modrinth website or in launchers that support Modrinth modpack installation.
 *   You can directly visit our [Modrinth Project Page](https://modrinth.com/modpack/thesomewhatyou-minecraft-revival).
+*   Or just [CurseForge](https://www.curseforge.com/minecraft/modpacks/toscr) pick your poison I guess 
 
 ### Manual Installation (e.g., for MultiMC)
-1.  Download the latest modpack file (usually a .zip from our Modrinth page - version v1.1.1 recommended) or from GitHub Releases (if available).
+1.  Download from GitHub Releases (if available,sometimes delays occur).
 2.  In MultiMC (or a compatible launcher like Prism Launcher):
     *   Click Add Instance
     *   Select Import from zip
@@ -63,7 +61,7 @@ The easiest way to install and stay updated is through Modrinth:
 
 
 ## Restrictions & Licensing
-This modpack is protected under the [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). View their restrictions.
+This modpack is protected under the [CC BY-NC-SA 4.0 license.](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) Click to review. 
 
 ## Project Statement
 This project will be **entirely free, forever.** You heard me right! No donations shall be taken. My only revenue will be Modrinth giving me the bag. Ko-Fi might be coming.
