@@ -1,177 +1,59 @@
-// Custom SCSS rules for a lighter, cleaner theme
+// Custom SCSS rules that build ON TOP OF or OVERRIDE the selected color scheme (e.g., custom_theme.scss)
+// This file is imported after the color scheme, so its rules have higher specificity or can add new features.
 
-// --- Fonts ---
-// Use system fonts for better readability and a more standard feel.
-// The color scheme file ($body-text-color, $body-heading-color) will handle colors.
-body, p, li, td, th, input, textarea, button, .btn {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem; // Standard font size
-}
+// --- Potential Overrides or Additions for Retro Theme ---
 
-h1, h2, h3, h4, h5, h6, .site-title {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  // Remove retro text shadow
-  text-shadow: none;
-}
-
-.site-title {
-  font-size: 2.2rem; // Slightly adjusted size
-  letter-spacing: normal; // Standard letter spacing
-  font-weight: 600; // A bit bolder for the title
-}
-
-// --- General Enhancements ---
-html {
-  // Remove scanlines effect
-}
-
-// --- Warning/Callout Styling ---
-// Rely primarily on the color scheme variables for callouts.
-// Add some subtle styling for a modern look.
-.callout {
-  border-left-width: 4px;
-  border-radius: 4px; // Slightly rounded corners
-  padding: 1em 1.5em;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05); // Softer shadow
-  margin-bottom: 1.5rem; // Add some space below callouts
-}
-
-// Specific callout text colors are defined in light_theme.scss
-// Example: .callout--warning p, .callout--warning strong should use $warning-text-color
-// No need to override here if the theme variables are working as expected.
-
-// --- Blockquotes ---
-blockquote {
-  border-left: 3px solid $grey-lt-200; // Use a border color from the light theme
-  padding-left: 1.5rem;
-  margin-left: 0;
-  margin-bottom: 1.5rem;
-  color: $grey-dk-000; // Slightly lighter text for quotes, defined in light_theme
-  font-style: italic;
-  background-color: $grey-lt-000; // Very light grey background
-  border-radius: 4px;
-  box-shadow: none; // Remove previous shadow
-}
-
-// --- Links ---
-a {
-  text-decoration: none; // Keep underline off by default, color is primary indicator
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, text-decoration 0.15s ease-in-out;
-}
-
-a:hover {
-  text-decoration: underline; // Add underline on hover for clarity
-  color: $link-hover-color; // Ensure hover color from theme is used
-  // Remove glowing text shadow
-  text-shadow: none;
-}
-
-// --- Code Blocks ---
-// Rely on color scheme variables. Add some general styling.
-pre, code {
-  border-radius: 4px; // Rounded corners for code blocks
-  border: 1px solid $code-border-color; // Use variable from light_theme.scss
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; // Keep monospace for code
-}
-
-pre {
-  padding: 1em;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05); // Softer shadow for code blocks
-  background-color: $code-background-color; // Ensure this is applied
-}
-
-code {
-  background-color: $code-background-color; // For inline code
-  padding: 0.2em 0.4em;
-  font-size: 0.9em;
-}
-
-// --- Header/Navigation ---
-.site-header {
-  border-bottom: 1px solid $border-color !important; // Thinner border, use theme variable
-  box-shadow: 0 1px 3px rgba(0,0,0,0.03); // Softer, more subtle shadow
-}
-
-// --- Buttons ---
-.btn {
-  border-radius: 4px; // Rounded buttons
-  border: 1px solid transparent; // Border color can be handled by background or specific btn types
-  text-shadow: none; // Remove text shadow
-  padding: 0.5em 1em;
-  font-weight: 500;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.btn:hover {
-  // Hover effects defined by $btn-primary-hover-background-color etc. in the theme
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); // Subtle shadow on hover
-}
-
-// --- Make selection match the theme ---
-// Using theme variables from light_theme.scss for selection
-::selection {
-  background: $blue-200; // Primary blue for selection background
-  color: $white;        // White text for selection
-}
-::-moz-selection { /* Firefox */
-  background: $blue-200;
-  color: $white;
-}
-
-// --- Scrollbar (for Webkit browsers) ---
-// Standard scrollbar or a more subtle light theme scrollbar
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: $grey-lt-100; // Light grey track
-}
-::-webkit-scrollbar-thumb {
-  background: $grey-lt-200; // Slightly darker grey thumb
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: $grey-dk-000; // Darker on hover
-}
-::-webkit-scrollbar-corner {
-  background: $grey-lt-100;
-}
-
-// --- Remove animations ---
-// Remove flickerTitle animation
+// Example: Restore or modify site title animations if desired
+/*
 .site-title a {
   display: inline-block;
-  animation: none; // Remove animation
+  // animation: flickerTitle 0.5s infinite alternate; // Example
 }
 
-// Remove blinking cursor effect
 .site-title a::after {
-  content: ''; // Remove content
-  animation: none; // Remove animation
-  margin-left: 0;
+  content: '_'; // Example blinking cursor
+  animation: blink 1s step-end infinite;
+  margin-left: 0.1em;
 }
 
-// General page width and main content adjustments for readability
-.main-content {
-  max-width: 800px; // Adjust for comfortable reading width if needed
-  margin: 0 auto;
-  padding: 2rem 1rem; // Add some padding
+@keyframes flickerTitle {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
 }
 
-// Improve spacing for headings
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.5rem; }
-// etc.
+*/
 
-// Responsive images
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px; // Optional: slightly rounded images
-}
+// --- General Enhancements ---
+// html {
+//   // Example: Add a subtle scanline effect if desired, and if not handled by the theme itself
+//   // background-image: linear-gradient(rgba(0, 255, 0, 0.03) 50%, transparent 50%);
+//   // background-size: 100% 4px;
+// }
+
+// --- Specific Component Styling ---
+// If there are very specific components that need styling not covered by the theme,
+// they can be added here.
+
+// .callout {
+//   // Further custom callout styling if needed
+// }
+
+// blockquote {
+//   // Further custom blockquote styling if needed
+// }
+
+// .site-header {
+//   // Further custom site header styling if needed
+// }
+
+// --- Fonts ---
+// While the main font is set in custom_theme.scss, specific overrides can go here.
+// For example, if a particular class needs a different retro font.
+// .special-retro-text {
+//   font-family: 'Perfect DOS VGA', monospace;
+// }
