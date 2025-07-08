@@ -1,0 +1,127 @@
+// Light Theme for Just the Docs
+
+// Base colors
+$white:    #fff !default;
+$grey-lt-000: #fafbfc !default; // Lightest grey for backgrounds
+$grey-lt-100: #f1f1f1 !default; // Slightly darker grey for accents/borders
+$grey-lt-200: #e1e4e8 !default; // For borders or subtle dividers
+$grey-dk-000: #666 !default;    // Dark grey for secondary text
+$grey-dk-100: #586069 !default; // Dark grey for primary text
+$grey-dk-200: #444 !default;    // Darker grey for headings
+$grey-dk-300: #24292e !default; // Darkest grey, almost black
+
+$blue-000: #f0f8ff !default; // Alice blue - very light, for subtle highlights
+$blue-100: #cfe8fc !default; // Light blue for info callouts or accents
+$blue-200: #007bff !default; // Primary blue for links and buttons
+$blue-300: #0056b3 !default; // Darker blue for hover states
+
+$green-100: #e6ffed !default; // Light green for success callouts
+$green-200: #28a745 !default; // Success green
+
+$yellow-100: #fff9e6 !default; // Light yellow for warning callouts
+$yellow-200: #ffc107 !default; // Warning yellow
+
+$red-100: #ffe6e6 !default;   // Light red for error callouts
+$red-200: #dc3545 !default;   // Error red
+
+// Theme colors
+$body-background-color: $white;
+$body-text-color: $grey-dk-100;
+$body-heading-color: $grey-dk-300;
+$link-color: $blue-200;
+$link-hover-color: $blue-300;
+$nav-child-link-color: $grey-dk-000;
+$nav-child-link-hover-color: $link-color;
+
+// Sidebar
+$sidebar-background-color: $grey-lt-000;
+$sidebar-border-color: $grey-lt-200; // Added for a subtle separation
+$nav-active-color: $link-color; // Active nav item matches link color
+
+// Code blocks
+$code-background-color: $grey-lt-100;
+$code-text-color: $grey-dk-200;
+$code-border-color: $grey-lt-200; // Added for consistency
+
+// Borders
+$border-color: $grey-lt-200;
+$table-border-color: $grey-lt-200;
+$hr-border-color: $grey-lt-200;
+
+// Callouts
+$feedback-background-color: $grey-lt-100; // Default callout background
+$feedback-text-color: $grey-dk-100;       // Default callout text
+
+$info-background-color: $blue-100;
+$info-text-color: $blue-300;
+
+$warning-background-color: $yellow-100;
+$warning-text-color: #c89600; // Darker yellow for text for contrast
+
+$danger-background-color: $red-100;
+$danger-text-color: $red-200;
+
+$success-background-color: $green-100;
+$success-text-color: $green-200;
+
+
+// Buttons
+$btn-primary-color: $white;
+$btn-primary-background-color: $blue-200;
+$btn-primary-hover-background-color: $blue-300;
+
+$btn-secondary-color: $blue-200;
+$btn-secondary-background-color: $white;
+$btn-secondary-hover-background-color: $grey-lt-100;
+
+
+// Responsive tables
+$table-background-color: $white;
+$table-header-color: $grey-dk-300;
+$table-row-stripe-color: $grey-lt-000;
+
+// Search
+$search-background-color: $white;
+$search-result-background-color: $grey-lt-000;
+$search-result-border-color: $border-color;
+$search-result-text-color: $body-text-color;
+$search-input-background-color: $grey-lt-100;
+$search-input-text-color: $body-text-color;
+$search-focussed-input-background-color: $white;
+$search-focussed-input-border-color: $blue-200; // Highlight search on focus
+
+// Footer
+$footer-background-color: $grey-lt-000;
+$footer-text-color: $grey-dk-000;
+$footer-link-color: $link-color;
+
+// Syntax highlighting variables (light theme)
+// These are typical names, Just the Docs might use its own specific ones if it has built-in themes
+// For a truly light syntax theme, you'd usually define many more specific token colors.
+// This is a basic set.
+$code-syntax-comment: #6a737d; // Grey for comments
+$code-syntax-keyword: #d73a49; // Reddish for keywords
+$code-syntax-string: #032f62;  // Dark blue for strings
+$code-syntax-number: #005cc5;  // Blue for numbers
+$code-syntax-variable: #e36209; // Orange for variables/constants
+$code-syntax-function: #6f42c1; // Purple for function names
+$code-syntax-tag: #22863a;      // Green for HTML tags
+$code-syntax-attribute: #6f42c1; // Purple for HTML attributes
+$code-syntax-error: #b31d28;    // Dark red for errors
+$code-syntax-class: #6f42c1;    // Purple for class names
+$code-syntax-operator: #d73a49; // Reddish for operators
+$code-syntax-punctuation: $grey-dk-100; // Default text color for punctuation
+
+// Ensure that these general variables are used by the theme's SASS for syntax highlighting.
+// If Just the Docs uses specific variable names like `$gh-syntax-*` or `$rouge-*`,
+// those would need to be targeted. For now, this provides a base.
+
+// This line imports the base Just the Docs styles.
+// It's important if you are *overriding* a built-in theme's variables.
+// If this is a *new* color scheme from scratch for the theme,
+// you might not need to import a base color scheme.
+// For now, let's assume this file will be self-contained for the color definitions.
+// @import "./default"; // Or the name of the default jtd theme if needed as a base.
+// For a truly custom scheme, we define everything.
+// If certain elements are not styled, it means the theme expects variables we haven't defined.
+// This will become apparent during testing/review.

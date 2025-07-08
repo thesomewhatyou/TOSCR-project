@@ -4,7 +4,7 @@ description: thesomewhatyou's Old School Computer Revival Project - Optimize Min
 theme: just-the-docs
 plugins:
   - jekyll-remote-theme
-color_scheme: custom_theme
+color_scheme: light_theme
 
 theme: jekyll-theme-minimal
 title: TOSCR-project
