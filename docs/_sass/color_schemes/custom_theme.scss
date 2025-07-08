@@ -1,5 +1,8 @@
 // Import the dark theme as a base
-@import "./dark";
+@import "dark"; // Corrected import path for remote themes
+
+// Import Retro Font
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 // Retro Computing / Matrix-inspired color scheme
 
@@ -24,9 +27,6 @@ $code-text-color: #00E000;
 $border-color: #005000; // Dark green for borders
 
 // Callouts / Warnings
-// The theme uses specific variables for different callout types (e.g., $feedback-color for warnings)
-// We might need to target these specifically if this doesn't catch them.
-// For now, let's try a general approach and refine.
 $feedback-color: #FFFF00; // Bright yellow for warning text/icons
 $feedback-background-color: #333300; // Dark yellow background for warnings
 
@@ -49,3 +49,405 @@ $search-result-text-color: $text-color;
 $search-input-background-color: #101010;
 $search-input-text-color: $text-color;
 $search-focussed-input-background-color: #000000;
+
+// --- Typography & Base Element Styling ---
+$main-font: 'VT323', monospace;
+$base-font-size: 1.1rem;
+// $text-shadow-strong: 0 0 5px $text-color, 0 0 10px $text-color, 0 0 15px rgba(0, 255, 0, 0.5); // Simplified
+// $text-shadow-subtle: 0 0 3px $text-color, 0 0 5px rgba(0, 255, 0, 0.3); // Simplified
+$text-shadow-strong: 0 0 5px $text-color; // Simplified further
+$text-shadow-subtle: 0 0 2px $text-color;   // Simplified further
+
+body, p, li, td, th, input, textarea, button, .btn {
+  font-family: $main-font;
+  font-size: $base-font-size;
+  // text-shadow: 0 0 1px rgba(0, 255, 0, 0.15); // Simplified
+}
+
+body {
+  line-height: 1.7;
+}
+
+p, li, td, th {
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.15s ease-in-out; // Simplified transition
+}
+
+a:hover {
+  text-decoration: none;
+  color: $link-hover-color;
+  // text-shadow: $text-shadow-subtle; // Simplified
+}
+
+.nav-list .nav-list-item > a.active,
+.nav-list .nav-list-item > .nav-list-link.active {
+  color: $nav-active-color;
+  // text-shadow: $text-shadow-subtle; // Simplified
+}
+
+pre, code {
+  font-family: $main-font;
+  border-radius: 0px;
+  border: 1px solid $border-color;
+  // text-shadow: $text-shadow-subtle; // Simplified
+  font-size: $base-font-size * 0.95;
+}
+
+pre {
+  padding: 1em;
+  background-color: $code-background-color;
+  // box-shadow: inset 0 0 5px rgba(0,0,0,0.5), 0 0 5px $border-color; // Simplified
+  overflow-x: auto;
+  max-width: 100%;
+  line-height: 1.5;
+}
+
+code {
+  background-color: darken($code-background-color, 3%);
+  padding: 0.2em 0.4em;
+  p > code, li > code, td > code {
+    font-size: $base-font-size * 0.9;
+    // text-shadow: $text-shadow-subtle; // Simplified
+  }
+}
+
+// Minimal syntax highlighting (most removed for testing)
+.highlight .k { color: $text-color; font-weight: bold; } // Keyword
+.highlight .s { color: $link-color; } // String
+.highlight .c { color: darken($text-color, 30%); font-style: italic; } // Comment
+
+.btn {
+  font-family: $main-font;
+  border-radius: 0px;
+  border: 1px solid $btn-primary-color;
+  // text-shadow: $text-shadow-subtle; // Simplified
+  padding: 0.6em 1.2em;
+  font-weight: normal;
+  transition: background-color 0.1s ease-out, color 0.1s ease-out; // Simplified
+  color: $btn-primary-color;
+  background-color: $btn-primary-background-color;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  // box-shadow: 2px 2px 0px darken($btn-primary-background-color, 10%); // Simplified
+}
+
+.btn:hover {
+  background-color: $btn-primary-hover-background-color;
+  color: $body-background-color;
+  // text-shadow: none;
+  // border-color: $link-hover-color;
+  // box-shadow: 1px 1px 0px darken($btn-primary-hover-background-color, 10%);
+  // transform: translate(1px, 1px);
+}
+
+// .btn:active { // Simplified
+//   background-color: darken($btn-primary-hover-background-color, 5%);
+//   box-shadow: 0px 0px 0px darken($btn-primary-hover-background-color, 10%);
+//   transform: translate(2px, 2px);
+// }
+
+::selection {
+  background: $text-color;
+  color: $body-background-color;
+}
+::-moz-selection {
+  background: $text-color;
+  color: $body-background-color;
+}
+
+blockquote {
+  font-family: $main-font;
+  background-color: darken($body-background-color, 3%);
+  border-left: 3px solid $link-color;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  color: $text-color;
+  // text-shadow: $text-shadow-subtle; // Simplified
+  // box-shadow: inset 2px 0 0px $link-color, 0 0 5px rgba(0,0,0,0.3); // Simplified
+
+  p {
+    margin-bottom: 0.5em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.callout {
+  font-family: $main-font;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-radius: 0px;
+  // box-shadow: 0 0 8px rgba(0,0,0,0.5); // Simplified
+  position: relative;
+
+  border-left-color: $border-color;
+  background-color: lighten($body-background-color, 5%);
+  color: $text-color;
+  // text-shadow: $text-shadow-subtle; // Simplified
+
+  h4 {
+    color: $heading-color !important;
+    // text-shadow: $text-shadow-strong !important; // Simplified
+    margin-top: 0;
+    font-size: $base-font-size * 1.2;
+  }
+
+  p, li {
+    color: $text-color;
+    // text-shadow: $text-shadow-subtle; // Simplified
+  }
+
+  a {
+    color: $link-color;
+    &:hover {
+      color: $link-hover-color;
+      // text-shadow: $text-shadow-subtle; // Simplified
+    }
+  }
+}
+
+.callout--warning, .callout.warning {
+  background-color: $feedback-background-color;
+  border-left-color: $feedback-color;
+  color: $feedback-color;
+  // text-shadow: 0 0 3px $feedback-color, 0 0 5px rgba(255, 255, 0, 0.3); // Simplified
+
+  h4 {
+    color: $feedback-color !important;
+    // text-shadow: 0 0 5px $feedback-color, 0 0 10px $feedback-color !important; // Simplified
+  }
+  p, li {
+    color: lighten($feedback-color, 10%);
+    // text-shadow: 0 0 2px lighten($feedback-color, 10%); // Simplified
+  }
+  a {
+    color: lighten($feedback-color, 20%);
+    &:hover {
+      color: $white;
+      // text-shadow: 0 0 5px $white; // Simplified
+    }
+  }
+}
+
+/*
+// --- Scrollbar (for Webkit browsers) --- // Commented out for testing
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: $body-background-color;
+  border-left: 1px solid $border-color;
+  border-top: 1px solid $border-color;
+}
+::-webkit-scrollbar-thumb {
+  background: $text-color;
+  border: 1px solid $border-color;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $link-hover-color;
+}
+::-webkit-scrollbar-corner {
+  background: $body-background-color;
+}
+*/
+
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $main-font;
+  color: $heading-color;
+  // text-shadow: $text-shadow-strong; // Simplified
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+
+h1 { font-size: 3rem; text-transform: uppercase; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.75rem; }
+h5 { font-size: 1.5rem; }
+h6 { font-size: 1.25rem; text-transform: uppercase; }
+
+.site-title {
+  font-family: $main-font;
+  color: $heading-color;
+  // text-shadow: $text-shadow-strong; // Simplified
+  letter-spacing: 2px;
+  font-size: 3.5rem !important;
+}
+
+.site-title a {
+  color: inherit !important;
+  // text-shadow: inherit !important; // Simplified
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0px;
+  border: 1px solid $border-color;
+}
+
+/*
+// --- Site Title Animation --- // Commented out for testing
+.site-title a::after {
+  content: '_';
+  animation: blink-caret 1s step-end infinite;
+  margin-left: 0.2em;
+  font-weight: normal;
+  text-shadow: $text-shadow-strong;
+}
+
+@keyframes blink-caret {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+*/
+
+/*
+// --- Subtle Scanline Overlay --- // Commented out for testing
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 255, 0, 0.03) 50%, transparent 50%);
+  background-size: 100% 3px;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0.6;
+}
+*/
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 2rem;
+  font-family: $main-font;
+  border: 1px solid $border-color;
+  // box-shadow: 0 0 8px $border-color, inset 0 0 4px darken($body-background-color, 5%); // Simplified
+  border-radius: 0px;
+}
+
+th, td {
+  padding: 0.8em 1em;
+  text-align: left;
+  border-bottom: 1px solid darken($border-color, 10%);
+  border-right: 1px solid darken($border-color, 10%);
+  color: $text-color;
+  // text-shadow: $text-shadow-subtle; // Simplified
+  line-height: 1.5;
+}
+
+th:last-child, td:last-child {
+  border-right: 0;
+}
+
+thead th {
+  background-color: lighten($body-background-color, 3%);
+  color: $heading-color;
+  // text-shadow: $text-shadow-strong; // Simplified
+  font-size: $base-font-size * 1.15;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top: 0;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: $table-row-stripe-color;
+}
+
+tbody tr:nth-child(even) {
+  background-color: lighten($table-row-stripe-color, 2%);
+}
+
+tbody tr:hover {
+  background-color: lighten($table-row-stripe-color, 8%);
+  color: $link-hover-color;
+  td {
+    color: $link-hover-color;
+    // text-shadow: $text-shadow-subtle; // Simplified
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px; // Simplified
+  background-color: $border-color; // Simplified
+  // box-shadow: 0 0 7px $text-color; // Simplified
+  margin: 2rem 0; // Simplified
+}
+
+.side-bar {
+  background-color: $sidebar-background-color;
+  border-right: 1px solid $border-color; // Simplified
+  // box-shadow: 2px 0 10px $border-color; // Simplified
+}
+
+.nav-list .nav-list-item .nav-list-link {
+  color: $nav-child-link-color;
+  // text-shadow: $text-shadow-subtle; // Simplified
+  transition: color 0.1s ease-out; // Simplified
+  letter-spacing: 0.5px;
+}
+
+.nav-list .nav-list-item .nav-list-link:hover,
+.nav-list .nav-list-item > .nav-list-link.active:hover {
+  color: $nav-child-link-hover-color;
+  // text-shadow: $text-shadow-strong; // Simplified
+  letter-spacing: 1px;
+}
+
+.nav-list .nav-list-item > .nav-list-link.active {
+  color: $nav-active-color;
+  // text-shadow: $text-shadow-strong; // Simplified
+  font-weight: normal;
+  border-left: 2px solid $nav-active-color; // Simplified
+  padding-left: calc(24px - 2px);
+}
+
+.search-input {
+  font-family: $main-font;
+  background-color: $search-input-background-color;
+  color: $search-input-text-color;
+  border: 1px solid $border-color;
+  border-radius: 0;
+  padding: 0.5em;
+  // text-shadow: $text-shadow-subtle; // Simplified
+  // box-shadow: inset 0 0 5px rgba(0,0,0,0.5); // Simplified
+  transition: background-color 0.15s ease-in-out; // Simplified
+}
+
+.search-input:focus {
+  background-color: $search-focussed-input-background-color;
+  color: $link-hover-color;
+  border-color: $link-hover-color;
+  // box-shadow: inset 0 0 8px rgba(0,0,0,0.5), 0 0 5px $link-hover-color; // Simplified
+  outline: none;
+}
+
+.label {
+  font-family: $main-font;
+}
