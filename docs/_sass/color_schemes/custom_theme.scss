@@ -1,5 +1,8 @@
 // Import the dark theme as a base
-@import "./dark";
+@import "dark"; // Corrected import path for remote themes
+
+// Import Retro Font
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 // Retro Computing / Matrix-inspired color scheme
 
@@ -49,3 +52,493 @@ $search-result-text-color: $text-color;
 $search-input-background-color: #101010;
 $search-input-text-color: $text-color;
 $search-focussed-input-background-color: #000000;
+
+// --- Typography & Base Element Styling ---
+$main-font: 'VT323', monospace;
+$base-font-size: 1.1rem; // Slightly larger for retro feel
+$text-shadow-strong: 0 0 5px $text-color, 0 0 10px $text-color, 0 0 15px rgba(0, 255, 0, 0.5);
+$text-shadow-subtle: 0 0 3px $text-color, 0 0 5px rgba(0, 255, 0, 0.3);
+
+body, p, li, td, th, input, textarea, button, .btn {
+  font-family: $main-font;
+  font-size: $base-font-size;
+  // Add a very subtle overall text glow to mimic CRT screens
+  text-shadow: 0 0 1px rgba(0, 255, 0, 0.15);
+}
+
+// Increase line height for readability with blocky fonts
+body {
+  line-height: 1.7;
+}
+
+p, li, td, th {
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none; // Underline will be handled by hover or specific cases
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, text-decoration 0.15s ease-in-out;
+}
+
+a:hover {
+  text-decoration: none; // Keep text decoration off for a cleaner glow
+  color: $link-hover-color;
+  text-shadow: $text-shadow-subtle; // Add glow on hover
+}
+
+// Current page nav link should also glow
+.nav-list .nav-list-item > a.active,
+.nav-list .nav-list-item > .nav-list-link.active {
+  color: $nav-active-color;
+  text-shadow: $text-shadow-subtle;
+}
+
+
+pre, code {
+  font-family: $main-font; // Use retro font for code
+  border-radius: 0px; // Sharp corners
+  border: 1px solid $border-color;
+  text-shadow: $text-shadow-subtle; // Subtle glow for code text
+  font-size: $base-font-size * 0.95; // Slightly smaller than base text
+}
+
+pre {
+  padding: 1em;
+  background-color: $code-background-color;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5), 0 0 5px $border-color; // Inset shadow + outer glow
+  overflow-x: auto; // Ensure horizontal scrolling for wide code blocks
+  max-width: 100%;
+  line-height: 1.5; // Adjust line height for code
+}
+
+code {
+  background-color: darken($code-background-color, 3%); // Slightly darker for inline code to distinguish from blocks
+  padding: 0.2em 0.4em;
+  // font-size is inherited from `pre, code` or surrounding text
+  // No need to redefine font-size: 0.9em here as it's handled by the common rule.
+  // However, ensure inline code within paragraphs is not overly large.
+  p > code, li > code, td > code { // Target inline code specifically if needed
+    font-size: $base-font-size * 0.9; // Make sure it's not too big compared to paragraph text
+    text-shadow: $text-shadow-subtle;
+  }
+}
+
+// Style for syntax highlighting (if Just the Docs theme supports it with this setup)
+// These are generic, might need adjustment based on actual output
+.highlight .c { color: #999; font-style: italic; } // Comment
+.highlight .err { color: #FF0000; background-color: #330000; } // Error
+.highlight .k { color: #00FF00; font-weight: bold; } // Keyword
+.highlight .o { color: #00FF00; font-weight: bold; } // Operator
+.highlight .cm { color: #999; font-style: italic; } // Comment.Multiline
+.highlight .cp { color: #00FFFF; font-weight: bold; } // Comment.Preproc
+.highlight .c1 { color: #999; font-style: italic; } // Comment.Single
+.highlight .cs { color: #00FF00; font-weight: bold; font-style: italic; } // Comment.Special
+.highlight .gd { color: #FF0000; } // Generic.Deleted
+.highlight .ge { font-style: italic; } // Generic.Emph
+.highlight .gr { color: #FF0000; } // Generic.Error
+.highlight .gh { color: #00FF00; font-weight: bold; } // Generic.Heading
+.highlight .gi { color: #FFFF00; } // Generic.Inserted
+.highlight .go { color: #333333; } // Generic.Output
+.highlight .gp { color: #00FF00; font-weight: bold; } // Generic.Prompt
+.highlight .gs { font-weight: bold; } // Generic.Strong
+.highlight .gu { color: #00FFFF; font-weight: bold; } // Generic.Subheading
+.highlight .gt { color: #FF0000; } // Generic.Traceback
+.highlight .kc { color: #00FF00; font-weight: bold; } // Keyword.Constant
+.highlight .kd { color: #00FF00; font-weight: bold; } // Keyword.Declaration
+.highlight .kn { color: #00FFFF; font-weight: bold; } // Keyword.Namespace
+.highlight .kp { color: #00FF00; } // Keyword.Pseudo
+.highlight .kr { color: #00FF00; font-weight: bold; } // Keyword.Reserved
+.highlight .kt { color: #FFFF00; font-weight: bold; } // Keyword.Type
+.highlight .m { color: #00FFFF; } // Literal.Number
+.highlight .s { color: #FFFF00; } // Literal.String
+.highlight .na { color: #FFFF00; } // Name.Attribute
+.highlight .nb { color: #00FF00; } // Name.Builtin
+.highlight .nc { color: #FFFF00; font-weight: bold; } // Name.Class
+.highlight .no { color: #00FF00; } // Name.Constant
+.highlight .ni { color: #FFFF00; font-weight: bold; } // Name.Entity
+.highlight .ne { color: #FF0000; font-weight: bold; } // Name.Exception
+.highlight .nf { color: #00FF00; font-weight: bold; } // Name.Function
+.highlight .nn { color: #FFFF00; } // Name.Namespace
+.highlight .nt { color: #00FFFF; font-weight: bold; } // Name.Tag
+.highlight .nv { color: #00FF00; } // Name.Variable
+.highlight .ow { color: #00FF00; font-weight: bold; } // Operator.Word
+.highlight .w { color: $text-color; } // Text.Whitespace
+.highlight .mf { color: #00FFFF; } // Literal.Number.Float
+.highlight .mh { color: #00FFFF; } // Literal.Number.Hex
+.highlight .mi { color: #00FFFF; } // Literal.Number.Integer
+.highlight .mo { color: #00FFFF; } // Literal.Number.Oct
+.highlight .sb { color: #FFFF00; } // Literal.String.Backtick
+.highlight .sc { color: #FFFF00; } // Literal.String.Char
+.highlight .sd { color: #FFFF00; } // Literal.String.Doc
+.highlight .s2 { color: #FFFF00; } // Literal.String.Double
+.highlight .se { color: #FFFF00; font-weight: bold; } // Literal.String.Escape
+.highlight .sh { color: #FFFF00; } // Literal.String.Heredoc
+.highlight .si { color: #FFFF00; } // Literal.String.Interpol
+.highlight .sx { color: #FFFF00; } // Literal.String.Other
+.highlight .sr { color: #00FFFF; } // Literal.String.Regex
+.highlight .s1 { color: #FFFF00; } // Literal.String.Single
+.highlight .ss { color: #00FF00; } // Literal.String.Symbol
+.highlight .bp { color: #00FF00; } // Name.Builtin.Pseudo
+.highlight .vc { color: #00FF00; } // Name.Variable.Class
+.highlight .vg { color: #00FF00; } // Name.Variable.Global
+.highlight .vi { color: #00FF00; } // Name.Variable.Instance
+.highlight .il { color: #00FFFF; } // Literal.Number.Integer.Long
+
+
+.btn {
+  font-family: $main-font;
+  border-radius: 0px; // Sharp corners
+  border: 1px solid $btn-primary-color; // Use button text color for border
+  text-shadow: $text-shadow-subtle;
+  padding: 0.6em 1.2em;
+  font-weight: normal; // VT323 usually doesn't need bold
+  transition: background-color 0.1s ease-out, color 0.1s ease-out, box-shadow 0.1s ease-out, transform 0.1s ease-out;
+  color: $btn-primary-color;
+  background-color: $btn-primary-background-color;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 0px darken($btn-primary-background-color, 10%); // Subtle pixelated shadow
+}
+
+.btn:hover {
+  background-color: $btn-primary-hover-background-color;
+  color: $body-background-color; // Dark text on hover for contrast
+  text-shadow: none; // Remove glow, rely on bg change
+  border-color: $link-hover-color;
+  box-shadow: 1px 1px 0px darken($btn-primary-hover-background-color, 10%); // Shadow moves slightly
+  transform: translate(1px, 1px); // Button "press" effect
+}
+
+.btn:active {
+  background-color: darken($btn-primary-hover-background-color, 5%);
+  box-shadow: 0px 0px 0px darken($btn-primary-hover-background-color, 10%);
+  transform: translate(2px, 2px); // Deeper press
+}
+
+
+// --- Selection Highlighting ---
+::selection {
+  background: $text-color; // Green background
+  color: $body-background-color; // Dark text
+}
+::-moz-selection { /* Firefox */
+  background: $text-color;
+  color: $body-background-color;
+}
+
+// --- Scrollbar (for Webkit browsers) ---
+// (Scrollbar styling is already here, moving blockquotes and callouts before it for organization)
+
+// --- Blockquotes ---
+blockquote {
+  font-family: $main-font;
+  background-color: darken($body-background-color, 3%); // Slightly different from main bg
+  border-left: 3px solid $link-color;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  color: $text-color; // Ensure text is bright
+  text-shadow: $text-shadow-subtle;
+  box-shadow: inset 2px 0 0px $link-color, 0 0 5px rgba(0,0,0,0.3); // Inner glow and subtle outer shadow
+
+  p {
+    margin-bottom: 0.5em; // Spacing for paragraphs within blockquote
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// --- Callouts ---
+.callout {
+  font-family: $main-font;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-radius: 0px; // Sharp corners
+  box-shadow: 0 0 8px rgba(0,0,0,0.5); // Outer shadow to lift it
+  position: relative; // For potential pseudo-elements
+
+  // Default callout (if not specifically typed)
+  border-left-color: $border-color;
+  background-color: lighten($body-background-color, 5%);
+  color: $text-color;
+  text-shadow: $text-shadow-subtle;
+
+  h4 { // Headers within callouts
+    color: $heading-color !important; // Ensure heading color override
+    text-shadow: $text-shadow-strong !important;
+    margin-top: 0;
+    font-size: $base-font-size * 1.2; // Slightly larger for callout titles
+  }
+
+  p, li {
+    color: $text-color; // Ensure text color
+    text-shadow: $text-shadow-subtle;
+  }
+
+  a {
+    color: $link-color;
+    &:hover {
+      color: $link-hover-color;
+      text-shadow: $text-shadow-subtle;
+    }
+  }
+}
+
+// Warning Callout
+.callout--warning, .callout.warning {
+  background-color: $feedback-background-color;
+  border-left-color: $feedback-color;
+  color: $feedback-color;
+  text-shadow: 0 0 3px $feedback-color, 0 0 5px rgba(255, 255, 0, 0.3);
+
+  h4 {
+    color: $feedback-color !important;
+    text-shadow: 0 0 5px $feedback-color, 0 0 10px $feedback-color !important;
+  }
+  p, li {
+    color: lighten($feedback-color, 10%); // Slightly lighter for readability on dark yellow bg
+    text-shadow: 0 0 2px lighten($feedback-color, 10%);
+  }
+  a {
+    color: lighten($feedback-color, 20%);
+    &:hover {
+      color: $white; // Use white for hover on yellow for pop
+      text-shadow: 0 0 5px $white;
+    }
+  }
+}
+
+// Other callout types (info, danger, success) - apply similar styling if needed
+// For now, focusing on warning as it's explicitly used in index.md
+// .callout--info, .callout.info { ... }
+// .callout--danger, .callout.danger { ... }
+// .callout--success, .callout.success { ... }
+
+
+// --- Scrollbar (for Webkit browsers) ---
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: $body-background-color;
+  border-left: 1px solid $border-color;
+  border-top: 1px solid $border-color;
+}
+::-webkit-scrollbar-thumb {
+  background: $text-color;
+  border: 1px solid $border-color;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $link-hover-color;
+}
+::-webkit-scrollbar-corner {
+  background: $body-background-color;
+}
+
+// --- Layout & Spacing ---
+.main-content {
+  max-width: 900px; // Slightly wider for a more expansive feel
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $main-font;
+  color: $heading-color;
+  text-shadow: $text-shadow-strong;
+  margin-top: 2.5rem; // Increased margin
+  margin-bottom: 1.5rem; // Increased margin
+  letter-spacing: 1px; // Slight letter spacing for retro feel
+  font-weight: normal; // VT323 is often bold by default, normal can look better
+}
+
+h1 { font-size: 3rem; text-transform: uppercase; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.75rem; }
+h5 { font-size: 1.5rem; }
+h6 { font-size: 1.25rem; text-transform: uppercase; }
+
+// Site title specific styling
+.site-title {
+  font-family: $main-font;
+  color: $heading-color;
+  text-shadow: $text-shadow-strong;
+  letter-spacing: 2px;
+  font-size: 3.5rem !important; // Ensure it's large
+}
+
+// Make sure site title link inherits color and shadow
+.site-title a {
+  color: inherit !important;
+  text-shadow: inherit !important;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0px; // Sharp corners
+  border: 1px solid $border-color; // Thematic border for images
+}
+
+// --- Site Title Animation ---
+.site-title a::after {
+  content: '_';
+  animation: blink-caret 1s step-end infinite;
+  margin-left: 0.2em;
+  font-weight: normal;
+  text-shadow: $text-shadow-strong;
+}
+
+@keyframes blink-caret {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+// --- Subtle Scanline Overlay ---
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 255, 0, 0.03) 50%, transparent 50%); // Slightly more visible
+  background-size: 100% 3px; // Thinner lines
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0.6; // Slightly more visible
+}
+
+// --- Table Styling ---
+table {
+  width: 100%;
+  border-collapse: separate; // Allows for spacing and better shadow rendering
+  border-spacing: 0;
+  margin-bottom: 2rem;
+  font-family: $main-font;
+  border: 1px solid $border-color;
+  box-shadow: 0 0 8px $border-color, inset 0 0 4px darken($body-background-color, 5%);
+  border-radius: 0px; // Ensure sharp corners for table itself
+}
+
+th, td {
+  padding: 0.8em 1em;
+  text-align: left;
+  border-bottom: 1px solid darken($border-color, 10%);
+  border-right: 1px solid darken($border-color, 10%);
+  color: $text-color;
+  text-shadow: $text-shadow-subtle;
+  line-height: 1.5;
+}
+
+th:last-child, td:last-child {
+  border-right: 0;
+}
+
+thead th {
+  background-color: lighten($body-background-color, 3%);
+  color: $heading-color;
+  text-shadow: $text-shadow-strong;
+  font-size: $base-font-size * 1.15;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top: 0; // Remove top border for header cells if table has main border
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: $table-row-stripe-color;
+}
+
+tbody tr:nth-child(even) {
+  background-color: lighten($table-row-stripe-color, 2%); // Slightly different for even rows
+}
+
+
+tbody tr:hover {
+  background-color: lighten($table-row-stripe-color, 8%);
+  color: $link-hover-color;
+  td { // Ensure hover color applies to td text
+    color: $link-hover-color;
+    text-shadow: $text-shadow-subtle;
+  }
+}
+
+// --- Horizontal Rule ---
+hr {
+  border: 0;
+  height: 2px; // Slightly thicker
+  // Gradient with a sharper center line
+  background-image: linear-gradient(to right,
+    rgba(0,0,0,0) 0%,
+    rgba($text-color,0.2) 40%,
+    rgba($text-color,1) 50%,
+    rgba($text-color,0.2) 60%,
+    rgba(0,0,0,0) 100%);
+  box-shadow: 0 0 7px $text-color;
+  margin: 3rem 0; // More spacing
+}
+
+// --- Sidebar Enhancements ---
+.side-bar {
+  background-color: $sidebar-background-color;
+  border-right: 2px solid $border-color;
+  box-shadow: 2px 0 10px $border-color;
+}
+
+.nav-list .nav-list-item .nav-list-link {
+  color: $nav-child-link-color;
+  text-shadow: $text-shadow-subtle;
+  transition: color 0.1s ease-out, text-shadow 0.1s ease-out, letter-spacing 0.2s ease-out;
+  letter-spacing: 0.5px;
+}
+
+.nav-list .nav-list-item .nav-list-link:hover,
+.nav-list .nav-list-item > .nav-list-link.active:hover {
+  color: $nav-child-link-hover-color;
+  text-shadow: $text-shadow-strong;
+  letter-spacing: 1px;
+}
+
+.nav-list .nav-list-item > .nav-list-link.active {
+  color: $nav-active-color;
+  text-shadow: $text-shadow-strong; // Make active link glow more
+  font-weight: normal; // VT323 doesn't need bold
+  border-left: 3px solid $nav-active-color;
+  padding-left: calc(24px - 3px); // Adjust padding to account for border
+}
+
+// Search input field styling
+.search-input {
+  font-family: $main-font;
+  background-color: $search-input-background-color;
+  color: $search-input-text-color;
+  border: 1px solid $border-color;
+  border-radius: 0;
+  padding: 0.5em;
+  text-shadow: $text-shadow-subtle;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+  transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.search-input:focus {
+  background-color: $search-focussed-input-background-color;
+  color: $link-hover-color;
+  border-color: $link-hover-color;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.5), 0 0 5px $link-hover-color;
+  outline: none;
+}
+
+// Ensure just-the-docs specific classes also use the font
+.label {
+  font-family: $main-font;
+}
