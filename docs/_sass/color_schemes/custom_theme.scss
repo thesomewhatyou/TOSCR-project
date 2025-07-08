@@ -1,5 +1,8 @@
 // Import the dark theme as a base
-@import "./dark";
+@import "dark"; // Corrected import path for remote themes
+
+// Import Retro Font
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 // Import Retro Font
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
