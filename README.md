@@ -50,8 +50,9 @@ This modpack is protected under the Creative Commons Zero v1.0 Universal. View t
 
 # Statement
 
-This project will be **entirely free, forever.** You heard me right! No donations shall be taken. My only revenue will be Modrinth giving me the bag. Ko-Fi might be coming.
+This project will be **entirely free, forever.** Donations can be taken@
 Or, maybe Modrinth giving me that sweet, sweet bag.
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W61DEEH8)
 
 ## Anyways...
 
