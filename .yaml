@@ -1,0 +1,68 @@
+name: Publish Modpack to Modrinth & CurseForge
+
+on:
+  release:
+    types: [published] # This workflow runs when a new GitHub Release is published
+  workflow_dispatch: # Allows manual triggering from GitHub Actions tab
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download release assets
+        uses: actions/download-artifact@v4 # Use this if you upload artifacts in a *previous* job
+        # Or if your .mrpack and .zip are committed to the repo, you might not need this step.
+        # But for files generated as part of a release, downloading assets from *this* release is ideal.
+        # For simplicity, if they are always in your repo, you can remove this and directly point 'files'.
+
+      - name: Find Modpack Files
+        id: find_files # Gives us an output variable
+        run: |
+          # Locate the .mrpack file (adjust path as needed if not in repo root)
+          MRPACK_FILE=$(find . -name "*.mrpack" -print -quit)
+          if [ -z "$MRPACK_FILE" ]; then
+            echo "::error::No .mrpack file found in the repository."
+            exit 1
+          fi
+          echo "Found .mrpack: $MRPACK_FILE"
+          echo "mrpack_path=$MRPACK_FILE" >> $GITHUB_OUTPUT
+
+          # Locate the .zip file (adjust path as needed if not in repo root)
+          ZIP_FILE=$(find . -name "*.zip" -print -quit)
+          if [ -z "$ZIP_FILE" ]; then
+            echo "::error::No .zip file found in the repository."
+            exit 1
+          fi
+          echo "Found .zip: $ZIP_FILE"
+          echo "zip_path=$ZIP_FILE" >> $GITHUB_OUTPUT
+
+      - name: Publish to Modrinth and CurseForge
+        uses: Kir-Antipov/mc-publish@v3.3 # Use the latest version for best compatibility
+        with:
+          # Common Settings
+          name: "My Awesome Modpack v${{ github.ref_name }}" # Uses the Git tag name for the release name
+          version: ${{ github.ref_name }} # Uses the Git tag name as the version
+          changelog: |
+            # Release Notes for ${{ github.ref_name }}
+            ${{ github.event.release.body || 'No release body provided.' }} # Use GitHub Release Notes
+
+          # Modrinth Specifics
+          modrinth-id: GVUVZHm8 # REPLACE with your Modrinth Modpack Project ID
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-files: ${{ steps.find_files.outputs.mrpack_path }} # Path to your .mrpack file
+          modrinth-featured: true # Set to true to feature this version on Modrinth
+
+          # CurseForge Specifics
+          curseforge-id: 1205871 # REPLACE with your CurseForge Modpack Project ID
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          curseforge-files: ${{ steps.find_files.outputs.zip_path }} # Path to your .zip file
+
+          # Modpack specific metadata (adjust as needed for your pack)
+          loaders: "fabric,forge" # e.g., "fabric", "forge", "quilt", "neoforge", etc.
+          game-versions: "1.21.4" # Compatible Minecraft versions for your pack
+          # java-versions: "17" # If your pack requires a specific Java version
+          # Add any other relevant mc-publish options here, such as dependencies, warning messages etc.
