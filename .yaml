@@ -8,33 +8,53 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to download release assets using GITHUB_TOKEN
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download release assets
-        uses: actions/download-artifact@v4 # Use this if you upload artifacts in a *previous* job
-        # Or if your .mrpack and .zip are committed to the repo, you might not need this step.
-        # But for files generated as part of a release, downloading assets from *this* release is ideal.
-        # For simplicity, if they are always in your repo, you can remove this and directly point 'files'.
+      # --- MODIFICATION START ---
+      # This step downloads the .mrpack and .zip files that you attach to your GitHub Release.
+      # They will be downloaded into the current working directory of the runner.
+      - name: Download .mrpack release asset
+        uses: robinraju/release-assets@v4
+        with:
+          # This pattern matches any file ending with .mrpack in the release assets
+          pattern: "*.mrpack"
+          # The tag of the current release
+          tag: ${{ github.ref_name }}
+          # Use the default GITHUB_TOKEN to authenticate for downloading assets
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download .zip release asset
+        uses: robinraju/release-assets@v4
+        with:
+          # This pattern matches any file ending with .zip in the release assets
+          pattern: "*.zip"
+          # The tag of the current release
+          tag: ${{ github.ref_name }}
+          # Use the default GITHUB_TOKEN to authenticate for downloading assets
+          token: ${{ secrets.GITHUB_TOKEN }}
+      # --- MODIFICATION END ---
 
       - name: Find Modpack Files
         id: find_files # Gives us an output variable
         run: |
-          # Locate the .mrpack file (adjust path as needed if not in repo root)
+          # Locate the .mrpack file (now downloaded to the current directory)
           MRPACK_FILE=$(find . -name "*.mrpack" -print -quit)
           if [ -z "$MRPACK_FILE" ]; then
-            echo "::error::No .mrpack file found in the repository."
+            echo "::error::No .mrpack file found after downloading release assets."
             exit 1
           fi
           echo "Found .mrpack: $MRPACK_FILE"
           echo "mrpack_path=$MRPACK_FILE" >> $GITHUB_OUTPUT
 
-          # Locate the .zip file (adjust path as needed if not in repo root)
+          # Locate the .zip file (now downloaded to the current directory)
           ZIP_FILE=$(find . -name "*.zip" -print -quit)
           if [ -z "$ZIP_FILE" ]; then
-            echo "::error::No .zip file found in the repository."
+            echo "::error::No .zip file found after downloading release assets."
             exit 1
           fi
           echo "Found .zip: $ZIP_FILE"
@@ -62,7 +82,7 @@ jobs:
           curseforge-files: ${{ steps.find_files.outputs.zip_path }} # Path to your .zip file
 
           # Modpack specific metadata (adjust as needed for your pack)
-          loaders: "fabric,forge" # e.g., "fabric", "forge", "quilt", "neoforge", etc.
+          loaders: "fabric" # e.g., "fabric", "forge", "quilt", "neoforge", etc.
           game-versions: "1.21.4" # Compatible Minecraft versions for your pack
           # java-versions: "17" # If your pack requires a specific Java version
           # Add any other relevant mc-publish options here, such as dependencies, warning messages etc.
