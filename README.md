@@ -16,7 +16,12 @@ TOSCR-project is a very iffy modpack, as monthly updates maybe will be provided,
 * And most importantly, around 100+ FPS for iMacs using this. (Tested on a 2017 iMac. Not tested on any other machine. Testing will be great.
 * Working on modern machines like the Bee-Link SER8 can give performance boosts of up to 300+ FPS with infinite FPS and VSync off.
   
+
+
+
+
 <img width="233" height="46" alt="image" src="https://github.com/user-attachments/assets/80359372-da56-4ce7-9074-4e2d091d035f" />
+
 (And only for Fabric)
 
 
