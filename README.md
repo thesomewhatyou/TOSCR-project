@@ -17,7 +17,7 @@ TOSCR-project is a very iffy modpack, as monthly updates maybe will be provided,
 * Working on modern machines like the Bee-Link SER8 can give performance boosts of up to 300+ FPS with infinite FPS and VSync off.
   
 
-
+---
 
 
 <img width="233" height="46" alt="image" src="https://github.com/user-attachments/assets/80359372-da56-4ce7-9074-4e2d091d035f" />
